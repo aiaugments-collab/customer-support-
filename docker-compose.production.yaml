@@ -7,10 +7,23 @@ services:
     volumes:
       - storage_data:/app/storage
 
+  db_migrate:
+    <<: *base
+    depends_on:
+      - redis
+    environment:
+      - NODE_ENV=production
+      - RAILS_ENV=production
+      - INSTALLATION_ENV=docker
+    entrypoint: docker/entrypoints/rails.sh
+    command: ['bundle', 'exec', 'rails', 'db:chatwoot_prepare']
+    restart: "no"
+
   rails:
     <<: *base
     depends_on:
       - redis
+      - db_migrate
     ports:
       - '3001:3000'
     environment:
@@ -25,6 +38,7 @@ services:
     <<: *base
     depends_on:
       - redis
+      - db_migrate
     environment:
       - NODE_ENV=production
       - RAILS_ENV=production
