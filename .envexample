@@ -4,10 +4,10 @@
 # Used to verify the integrity of signed cookies. so ensure a secure value is set
 # SECRET_KEY_BASE should be alphanumeric. Avoid special characters or symbols.
 # Use `rake secret` to generate this variable
-SECRET_KEY_BASE=replace_with_lengthy_secure_hex
+SECRET_KEY_BASE=a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456789012345678901234567890abcdef12345678
 
 # Replace with the URL you are planning to use for your app
-FRONTEND_URL=http://0.0.0.0:3000
+FRONTEND_URL=https://support.augment.cfd
 # To use a dedicated URL for help center pages
 # HELPCENTER_URL=http://0.0.0.0:3000
 
@@ -31,11 +31,11 @@ ENABLE_ACCOUNT_SIGNUP=false
 # specify the configs via single URL or individual variables
 # ref: https://www.iana.org/assignments/uri-schemes/prov/redis
 # You can also use the following format for the URL: redis://:password@host:port/db_number
-REDIS_URL=redis://redis:6379
+REDIS_URL=redis://default:AYMrAAIjcDFkZTFjMWJjY2E4M2Y0NDIyOGRlMDYwYTIxNzUyOTJkNnAxMA@tender-sculpin-33579.upstash.io:6379
 # If you are using docker-compose, set this variable's value to be any string,
 # which will be the password for the redis service running inside the docker-compose
 # to make it secure
-REDIS_PASSWORD=
+REDIS_PASSWORD=AYMrAAIjcDFkZTFjMWJjY2E4M2Y0NDIyOGRlMDYwYTIxNzUyOTJkNnAxMA
 # Redis Sentinel can be used by passing list of sentinel host and ports e,g. sentinel_host1:port1,sentinel_host2:port2
 REDIS_SENTINELS=
 # Redis sentinel master name is required when using sentinel, default value is "mymaster".
@@ -55,11 +55,11 @@ REDIS_SENTINEL_MASTER_NAME=
 # Postgres Database config variables
 # You can leave POSTGRES_DATABASE blank. The default name of
 # the database in the production environment is chatwoot_production
-# POSTGRES_DATABASE=
-POSTGRES_HOST=postgres
-POSTGRES_USERNAME=postgres
-POSTGRES_PASSWORD=
-RAILS_ENV=development
+POSTGRES_DATABASE=neondb
+POSTGRES_HOST=ep-purple-poetry-ad2ttwzy-pooler.c-2.us-east-1.aws.neon.tech
+POSTGRES_USERNAME=neondb_owner
+POSTGRES_PASSWORD=npg_tpKr12qGUHQf
+RAILS_ENV=production
 # Changes the Postgres query timeout limit. The default is 14 seconds. Modify only when required.
 # POSTGRES_STATEMENT_TIMEOUT=14s
 RAILS_MAX_THREADS=5
